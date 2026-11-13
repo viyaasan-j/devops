@@ -1,0 +1,416 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nova - Creative Solutions</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: #ffffff;
+            color: #334155;
+        }
+
+        /* Navigation */
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 8%;
+            background: #ffffff;
+            border-bottom: 1px solid #e8edf3;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            color: #315b82;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #475569;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #527fa6;
+        }
+
+        /* Hero Section */
+
+        .hero {
+            min-height: 480px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 70px 8%;
+            background: #f1f6fb;
+        }
+
+        .hero-content {
+            max-width: 550px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            color: #263f59;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            color: #64748b;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        button {
+            background: #527fa6;
+            color: white;
+            border: none;
+            padding: 13px 28px;
+            border-radius: 6px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #315b82;
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            font-size: 140px;
+        }
+
+        /* Date and Time */
+
+        .datetime {
+            text-align: center;
+            padding: 35px 20px;
+            background: #ffffff;
+        }
+
+        .datetime h2 {
+            color: #263f59;
+            margin-bottom: 15px;
+        }
+
+        #date {
+            color: #64748b;
+            margin-bottom: 10px;
+        }
+
+        #time {
+            font-size: 32px;
+            color: #315b82;
+            font-weight: bold;
+        }
+
+        /* Services */
+
+        .services {
+            padding: 70px 8%;
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 34px;
+            color: #263f59;
+            margin-bottom: 12px;
+        }
+
+        .services > p {
+            color: #8290a0;
+            margin-bottom: 40px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: #f8fafc;
+            padding: 35px 25px;
+            border: 1px solid #e8edf3;
+            border-radius: 10px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: #b8d2e8;
+            background: #f1f6fb;
+        }
+
+        .card .icon {
+            font-size: 40px;
+            margin-bottom: 18px;
+        }
+
+        .card h3 {
+            color: #315b82;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #718096;
+            line-height: 1.7;
+        }
+
+        /* About Section */
+
+        .about {
+            background: #f1f6fb;
+            padding: 60px 8%;
+            text-align: center;
+        }
+
+        .about h2 {
+            color: #263f59;
+            margin-bottom: 15px;
+        }
+
+        .about p {
+            color: #64748b;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+
+        footer {
+            background: #f8fafc;
+            color: #64748b;
+            text-align: center;
+            padding: 25px;
+            border-top: 1px solid #e8edf3;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        /* Responsive Design */
+
+        @media (max-width: 768px) {
+
+            nav {
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+            .hero-image {
+                font-size: 100px;
+                margin-top: 30px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <nav>
+
+        <div class="logo">NOVA.</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </nav>
+
+
+    <!-- Hero Section -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>Welcome to a Better Digital World</h1>
+
+            <p>
+                Explore new opportunities, discover innovative ideas
+                and experience simple solutions designed to make
+                your life and business better.
+            </p>
+
+            <button onclick="showMessage()">
+                Get Started →
+            </button>
+
+        </div>
+
+        <div class="hero-image">
+            🌿
+        </div>
+
+    </section>
+
+
+    <!-- Date and Time Section -->
+
+    <section class="datetime">
+
+        <h2>Today's Date & Time</h2>
+
+        <p id="date">Loading date...</p>
+
+        <h3 id="time">Loading time...</h3>
+
+    </section>
+
+
+    <!-- Services Section -->
+
+    <section class="services" id="services">
+
+        <h2>Our Services</h2>
+
+        <p>Simple ideas. Smart solutions. Better experiences.</p>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="icon">💡</div>
+
+                <h3>Creative Ideas</h3>
+
+                <p>
+                    Discover fresh ideas and innovative
+                    solutions for your business.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">⚡</div>
+
+                <h3>Smart Solutions</h3>
+
+                <p>
+                    Make your work easier with simple
+                    and effective solutions.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">🌎</div>
+
+                <h3>Global Reach</h3>
+
+                <p>
+                    Connect with people and opportunities
+                    across the world.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About Section -->
+
+    <section class="about" id="about">
+
+        <h2>About Us</h2>
+
+        <p>
+            We believe in creativity, innovation and
+            building a better digital future.
+        </p>
+
+        <button onclick="contactUs()">
+            Contact Us
+        </button>
+
+    </section>
+
+
+    <!-- Back to Top Button -->
+
+    <section style="text-align:center; padding:25px;">
+
+        <button onclick="backToTop()">
+            ↑ Back to Top
+        </button>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer id="contact">
+
+        <p id="footerText"></p>
+
+        <p>Designed with ❤️</p>
+
+    </footer>
+
+
+    <!-- JavaScript Connection -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
